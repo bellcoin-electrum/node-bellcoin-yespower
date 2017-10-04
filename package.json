@@ -1,0 +1,17 @@
+{
+  "name": "bitzeny-yescrypt",
+  "version": "1.0.0",
+  "description": "BitZeny yescrypt",
+  "main": "bitzeny_yescrypt",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "install": "node-gyp rebuild"
+  },
+  "author": "zenywallet",
+  "license": "MIT",
+  "gypfile": true,
+  "dependencies": {
+    "bindings": "*",
+    "nan": "^2.7.0"
+  }
+}
