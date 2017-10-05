@@ -2,11 +2,10 @@ BitZeny yescrypt for Node.js
 ============================
 
 ## Prerequisites
-* Node.js v0.10.x
+* Node.js
 
 ## Build
 ```
-nvm install v0.10
 git clone https://github.com/BitzenyCoreDevelopers/node-bitzeny-yescrypt.git && cd node-bitzeny-yescrypt
 npm install
 ```
