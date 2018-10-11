@@ -1144,4 +1144,30 @@ int yespower_free_local(yespower_local_t *local)
 {
 	return free_region(local);
 }
+
+
+void yespower_hash(const char *input, char *output)
+{
+	//YESPOWER_0_5, 2048, 8, "Client Key"
+	yespower_params_t params = {
+		.version = YESPOWER_0_5,
+		.N = 2048,
+		.r = 8,
+		.pers = (const uint8_t *)"Client Key",
+		.perslen = strlen("Client Key")
+	};
+	//uint8_t src[80];
+	yespower_binary_t dst;
+	size_t i;
+
+	if (yespower_tls((uint8_t *)input, 80, &params, &dst)) {
+		puts("FAILED");
+		return;
+	}
+
+	for (i = 0; i < sizeof(dst); i++) {
+		output[i] = dst.uc[i];
+		//printf("%02x%c", dst.uc[i], i < sizeof(dst) - 1 ? ' ' : '\n');
+	}
+}
 #endif

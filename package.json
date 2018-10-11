@@ -1,8 +1,8 @@
 {
   "name": "bitzeny-yescrypt",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "BitZeny yescrypt",
-  "main": "bitzeny_yescrypt",
+  "main": "bitzeny_yespower",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "install": "node-gyp rebuild"
