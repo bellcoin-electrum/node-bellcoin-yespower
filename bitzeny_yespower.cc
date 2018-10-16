@@ -36,4 +36,4 @@ NAN_MODULE_INIT(init)
     NAN_EXPORT(target, hash);
 }
 
-NODE_MODULE(bitzeny_yespower, init);
+NODE_MODULE(bellcoin_yespower, init);
