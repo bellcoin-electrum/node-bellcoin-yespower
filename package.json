@@ -1,8 +1,8 @@
 {
-  "name": "bitzeny-yescrypt",
+  "name": "bellcoin-yescrypt",
   "version": "1.1.0",
-  "description": "BitZeny yescrypt",
-  "main": "bitzeny_yespower",
+  "description": "Bellcoin yespower-1.0",
+  "main": "bellcoin_yespower",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "install": "node-gyp rebuild"
