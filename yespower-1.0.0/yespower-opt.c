@@ -1146,9 +1146,28 @@ int yespower_free_local(yespower_local_t *local)
 }
 
 
-int yespower_hash(const char *input, char *output)
+void yespower_hash(const char *input, char *output)
 {
-	yespower_params_t params = {YESPOWER_1_0, 2048, 32, NULL, 0};
-	return yespower_tls(input, 80, &params, (yespower_binary_t *) output);
+	//YESPOWER_1_0, 2048, 32, "Client Key"
+	yespower_params_t params = {
+		.version = YESPOWER_1_0,
+		.N = 2048,
+		.r = 32,
+		.pers = (const uint8_t *)"Client Key",
+		.perslen = strlen("Client Key")
+	};
+	//uint8_t src[80];
+	yespower_binary_t dst;
+	size_t i;
+
+	if (yespower_tls((uint8_t *)input, 80, &params, &dst)) {
+		puts("FAILED");
+		return;
+	}
+
+	for (i = 0; i < sizeof(dst); i++) {
+		output[i] = dst.uc[i];
+		//printf("%02x%c", dst.uc[i], i < sizeof(dst) - 1 ? ' ' : '\n');
+	}
 }
 #endif
