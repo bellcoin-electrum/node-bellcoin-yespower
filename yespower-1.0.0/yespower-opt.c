@@ -1148,13 +1148,13 @@ int yespower_free_local(yespower_local_t *local)
 
 void yespower_hash(const char *input, char *output)
 {
-	//YESPOWER_1_0, 2048, 32, "Client Key"
+	//YESPOWER_1_0, 2048, 32, NULL
 	yespower_params_t params = {
 		.version = YESPOWER_1_0,
 		.N = 2048,
 		.r = 32,
-		.pers = (const uint8_t *)"Client Key",
-		.perslen = strlen("Client Key")
+		.pers = NULL,
+		.perslen = 0
 	};
 	//uint8_t src[80];
 	yespower_binary_t dst;
